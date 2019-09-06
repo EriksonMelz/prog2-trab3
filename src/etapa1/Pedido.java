@@ -5,6 +5,7 @@
  */
 package etapa1;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -17,6 +18,7 @@ public class Pedido {
     private String nomeCliente;
     private Date data;    
     private String endereco;
+    private ArrayList<ItemPedido>itensPedido;    
 
     public int getNumero() {
         return numero;
@@ -51,10 +53,23 @@ public class Pedido {
     }
         
     public double getValorPedido(){
-        return 0.0;
+        double valorTotal = 0.0;
+        for (ItemPedido itemPedido : itensPedido) {
+            valorTotal += itemPedido.getValorItem();
+        }
+        return valorTotal;
     }
     
     public void incluirItem(Produto p, int qtd){
-        
+        ItemPedido itemNovo = new ItemPedido(p, qtd);
+        itensPedido.add(itemNovo);
+    }
+    
+    public int getPesoTotal(){
+        int pesoTotal = 0;
+        for (ItemPedido itemPedido : itensPedido) {
+            pesoTotal += itemPedido.getProduto().getPeso();
+        }
+        return pesoTotal;
     }
 }

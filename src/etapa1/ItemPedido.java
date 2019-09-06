@@ -35,6 +35,6 @@ public class ItemPedido {
     }
     
     protected double getValorItem(){
-        return 0.0;
+        return produto.getValor() * quantidade;
     }    
 }
