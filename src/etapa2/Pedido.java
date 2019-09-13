@@ -79,5 +79,9 @@ public class Pedido {
         
     public double getValorEntrega(){
         return getValorPedido() + tipoPedido.calcular(getPesoTotal());
-    }    
+    }
+
+    public int getQuantidadeItensPedido(){
+        return this.itensPedido.size();
+    }
 }

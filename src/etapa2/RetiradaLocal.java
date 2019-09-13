@@ -21,7 +21,7 @@ public class RetiradaLocal implements TipoPedido{
     }
     
     @Override
-    public double calcular(int pesoTotalPedido) {
+    public double calcular(Pedido pedido) {
         return 0.0;
     }
     

@@ -21,14 +21,14 @@ public class EncomendaPAC implements TipoPedido {
     }
     
     @Override
-    public double calcular(int pesoTotalPedido) {
-        if (pesoTotalPedido <= 1000) {
+    public double calcular(Pedido pedido) {
+        if (pedido.getPesoTotal() <= 1000) {
             return 10.0;
-        } else if (pesoTotalPedido <= 2000) {
+        } else if (pedido.getPesoTotal() <= 2000) {
             return 15.0;
-        } else if (pesoTotalPedido <= 3000) {
+        } else if (pedido.getPesoTotal() <= 3000) {
             return 20.0;
-        } else if (pesoTotalPedido <= 5000) {
+        } else if (pedido.getPesoTotal() <= 5000) {
             return 30.0;
         }
         

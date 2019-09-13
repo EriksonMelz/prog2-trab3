@@ -21,17 +21,17 @@ public class Sedex implements TipoPedido{
     }
     
     @Override
-    public double calcular(int pesoTotalPedido) {
-        if (pesoTotalPedido <= 500) {
+    public double calcular(Pedido pedido) {
+        if (pedido.getPesoTotal() <= 500) {
             return 12.5;
-        } else if (pesoTotalPedido <= 750) {
+        } else if (pedido.getPesoTotal() <= 750) {
             return 20.0;
-        } else if (pesoTotalPedido <= 1200) {
+        } else if (pedido.getPesoTotal() <= 1200) {
             return 30.0;
-        } else if (pesoTotalPedido <= 2000) {
+        } else if (pedido.getPesoTotal() <= 2000) {
             return 45.0;
         } else {
-            return calculaexcessopeso(pesoTotalPedido);
+            return calculaexcessopeso(pedido.getPesoTotal());
         }
     }
     

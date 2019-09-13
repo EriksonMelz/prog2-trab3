@@ -11,6 +11,6 @@ package etapa2;
  */
 public interface TipoPedido {
     
-    public double calcular(int pesoTotalPedido);
+    public double calcular(Pedido pedido);
     
 }
