@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package etapa1;
+package etapa2;
 
 /**
  *
@@ -11,6 +11,15 @@ package etapa1;
  */
 public class Sedex implements TipoPedido{
 
+    private static Sedex sedex;
+    
+    public static synchronized Sedex getInstance() {
+        if (sedex == null)
+            sedex = new Sedex();
+ 
+        return sedex;
+    }
+    
     @Override
     public double calcular(int pesoTotalPedido) {
         if (pesoTotalPedido <= 500) {

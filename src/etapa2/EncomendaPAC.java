@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package etapa1;
+package etapa2;
 
 /**
  *
@@ -11,6 +11,15 @@ package etapa1;
  */
 public class EncomendaPAC implements TipoPedido {
 
+    private static EncomendaPAC encomendaPAC;
+    
+    public static synchronized EncomendaPAC getInstance() {
+        if (encomendaPAC == null)
+            encomendaPAC = new EncomendaPAC();
+ 
+        return encomendaPAC;
+    }
+    
     @Override
     public double calcular(int pesoTotalPedido) {
         if (pesoTotalPedido <= 1000) {

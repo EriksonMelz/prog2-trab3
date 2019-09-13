@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package etapa1;
+package etapa2;
 
 /**
  *
@@ -11,6 +11,15 @@ package etapa1;
  */
 public class RetiradaLocal implements TipoPedido{
 
+    private static RetiradaLocal retiradaLocal;
+    
+    public static synchronized RetiradaLocal getInstance() {
+        if (retiradaLocal == null)
+            retiradaLocal = new RetiradaLocal();
+ 
+        return retiradaLocal;
+    }
+    
     @Override
     public double calcular(int pesoTotalPedido) {
         return 0.0;
