@@ -21,7 +21,12 @@ public class Pedido {
     private ArrayList<ItemPedido>itensPedido;
     private TipoPedido tipoPedido;
     
-    public void setTipoPedido(){
+    public Pedido(){
+        this.itensPedido = new ArrayList<ItemPedido>();
+    }
+    
+    public void setTipoPedido(TipoPedido tipo){
+        this.tipoPedido = tipo;
     }
 
     public int getNumero() {
@@ -78,7 +83,7 @@ public class Pedido {
     }
         
     public double getValorEntrega(){
-        return getValorPedido() + tipoPedido.calcular(getPesoTotal());
+        return getValorPedido() + tipoPedido.calcular(this);
     }
 
     public int getQuantidadeItensPedido(){

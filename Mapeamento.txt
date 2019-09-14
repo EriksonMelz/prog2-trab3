@@ -1,5 +1,5 @@
 Singleton:
-EncomendaPAC, RetiradaLocal, Sedex.
+EncomendaPAC, RetiradaLocal, Sedex, Motoboy.
 
 Strategy:
-TipoPedido, EncomendaPAC, RetiradaLocal, Sedex.
+TipoPedido, EncomendaPAC, RetiradaLocal, Sedex, Motoboy.
